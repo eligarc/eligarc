@@ -1,8 +1,18 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import Layout from '../components/Layout/Layout'
+import '../global.sass';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export function reportWebVitals(metric) {
+	console.log(metric)
 }
 
-export default MyApp
+export default function MyApp({ Component, pageProps }: AppProps) {
+	// Providers - Context/providers, Customs Themes, data
+	// layout
+	// props
+	return (
+	<Layout>
+		<Component {...pageProps} title={"Hola"} />
+	</Layout>
+	)
+}
