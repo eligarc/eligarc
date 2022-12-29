@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import Link from 'next/link'
 import MyThemeContext from '../../styles/Theme'
 
@@ -10,10 +10,10 @@ const Menu = () => {
 	function toggleThemeHandler(): void {
 		themeCtx.toggleThemeHandler();
 	}
-	console.log(themeCtx)
+
 	return (
 		<div className={`d-center ${styles.menu}`}>
-			<nav className='menu-links'>
+			<nav className={styles['menu-links']}>
 				<Link href='/' prefetch={false} className={styles.link}>
 					<i className='fa-solid fa-house-chimney'></i>
 				</Link>

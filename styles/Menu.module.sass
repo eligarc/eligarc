@@ -2,14 +2,16 @@
 	display: flex
 	justify-content: space-between
 	align-items: center
-	padding-bottom: var(--p-header-bottom)
-	.link
-		color: var(--text-color)
-		padding: 8px
-		border-radius: 8px
-		border: 1px solid var(--bg-color)
-		&:hover
-			border: 1px solid var(--light-gray)
+	.menu-links
+		margin: 0 0 var(--p-header-separation) 0
+		.link
+			font-size: var(--mlg)
+			color: var(--text-color)
+			padding: 8px
+			border-radius: 8px
+			border: 1px solid var(--bg-color)
+			&:hover
+				border: 1px solid var(--light-gray)
 	.theme-switch
 		cursor: pointer
 		&::before

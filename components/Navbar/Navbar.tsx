@@ -1,8 +1,9 @@
-import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+
 import Logo from '../../public/logo.png'
 import IcoMenu from '../../public/icon_menu.svg'
+
 import styles from '../../styles/Navbar.module.sass'
 
 const Navbar = () => {

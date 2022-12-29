@@ -1,12 +1,11 @@
 import React from 'react'
-import Footer from '../Footer/Footer';
-import Menu from '../Menu/Menu';
 import Navbar from '../Navbar/Navbar'
-// import styles from './layout.module.sass'
+import Menu from '../Menu/Menu'
+import Footer from '../Footer/Footer'
 
 type Props = {
-	children: React.ReactNode;
-};
+	children: React.ReactNode
+}
 
 const Layout: React.FC<Props> = ({ children }) => {
 	return (

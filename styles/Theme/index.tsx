@@ -1,62 +1,46 @@
-import { createContext, ReactElement, useEffect, useState } from "react";
+import { createContext, ReactElement, useEffect, useState } from 'react'
 
 const MyThemeContext = createContext({
-	isDarkTheme: true,
+	isDarkTheme: false,
 	toggleThemeHandler: () => { },
-});
+})
 
 interface ThemePropsInterface {
-	children?: JSX.Element | JSX.Element[];
+	children?: JSX.Element | JSX.Element[]
 }
 
-export function MyThemeContextProvider(
-	props: ThemePropsInterface
-): ReactElement {
-	const [isDarkTheme, setIsDarkTheme] = useState(true);
-	useEffect(() => initialThemeHandler());
-
-	function isLocalStorageEmpty(): boolean {
-		return !localStorage.getItem("isDarkTheme");
-	}
+export function MyThemeContextProvider(props: ThemePropsInterface): ReactElement {
+	const [isDarkTheme, setIsDarkTheme] = useState(false)
+	useEffect(() => initialThemeHandler(), [])
 
 	function initialThemeHandler(): void {
-		if (isLocalStorageEmpty()) {
-			localStorage.setItem("isDarkTheme", `true`);
-			document!.querySelector("body")!.classList.add("dark-mode");
-			setIsDarkTheme(true);
+		if (!sessionStorage.getItem('isDarkTheme')) {
+			sessionStorage.setItem('isDarkTheme', 'false')
 		} else {
 			const isDarkTheme: boolean = JSON.parse(
-				localStorage.getItem("isDarkTheme")!
-			);
-			isDarkTheme && document!.querySelector("body")!.classList.add("dark-mode");
+				sessionStorage.getItem('isDarkTheme')!
+			)
+			isDarkTheme && document!.querySelector('body')!.classList.add('dark-mode')
 			setIsDarkTheme(() => {
-				return isDarkTheme;
-			});
+				return isDarkTheme
+			})
 		}
 	}
 
 	function toggleThemeHandler(): void {
 		const isDarkTheme: boolean = JSON.parse(
-			localStorage.getItem("isDarkTheme")!
-		);
-		setIsDarkTheme(!isDarkTheme);
-		toggleDarkClassToBody();
-		setValueToLocalStorage();
-	}
-
-	function toggleDarkClassToBody(): void {
-		document!.querySelector("body")!.classList.toggle("dark-mode");
-	}
-
-	function setValueToLocalStorage(): void {
-		localStorage.setItem("isDarkTheme", `${!isDarkTheme}`);
+			sessionStorage.getItem('isDarkTheme')!
+		)
+		setIsDarkTheme(!isDarkTheme)
+		document!.querySelector('body')!.classList.toggle('dark-mode')
+		sessionStorage.setItem('isDarkTheme', `${!isDarkTheme}`)
 	}
 
 	return (
 		<MyThemeContext.Provider value={{ isDarkTheme, toggleThemeHandler }}>
 			{props.children}
 		</MyThemeContext.Provider>
-	);
+	)
 }
 
-export default MyThemeContext;
+export default MyThemeContext
