@@ -1,0 +1,30 @@
+.navbar
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-top: 16px !important
+	padding-bottom: var(--p-header-bottom) !important
+	.menu
+		display: none
+	.navbar-right
+		display: flex
+		.social-network
+			background: none
+			border: none
+			cursor: pointer
+			outline: none
+			padding: 0 0 0 1.2rem
+			.icon
+				font-size: 1.5rem
+				transition: transform 500ms
+				&:hover
+					transform: translateY(-10px)
+			.github
+				color: var(--bg-color-github)
+			.linkedin
+				color: #0e76a8
+			.twitter
+				color: #1da1f2
+		.icon-github
+			color: #171515
+
