@@ -3,4 +3,4 @@
   <h3 align="center">¡Hey 👋! Soy eligarc 👨🏻‍💻</h3>
 </p>
 
-<p align="center">Soy <strong>Desarrollador JavaScript Full Stack</strong> con 4 años experiencia.<br />¡Revisa mis proyectos personales 👇!</p>
+<p align="center">Soy <strong>Desarrollador JavaScript Full Stack</strong> con 4 años experiencia.<br />¡Revisa mis proyectos personales 👇</p>
