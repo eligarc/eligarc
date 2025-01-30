@@ -3,4 +3,4 @@
   <h3 align="center">¡Hey 👋! Soy Elio 👨🏻‍💻</h3>
 </p>
 
-<p align="center">Soy <strong>Software engineer</strong> 😉<br />¡Revisa mis proyectos personales 👇</p>
+<p align="center">Soy <strong>Software engineer</strong> 😉<br />¡Revisa mis proyectos 👇</p>
